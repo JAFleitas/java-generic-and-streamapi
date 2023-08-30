@@ -1,3 +1,5 @@
+import GenericExercise.Employee;
+import GenericExercise.LimitedCollection;
 import GenericExercise.Utilities;
 import StreamExercise.Person;
 import StreamExercise.Programmer;
@@ -11,10 +13,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        // ejercicio de genericos 1
-        genericExerciseOne();
-        genericExerciseTwo();
-
+        // ejercicio de genericos
+        //genericExerciseOne();
+        //genericExerciseTwo();
+        genericExerciseThree();
 
 
         /*
@@ -32,6 +34,27 @@ public class Main {
          exampleTwoStream(people);
         */
 
+
+
+
+    }
+
+    private static void genericExerciseThree() {
+        LimitedCollection<GenericExercise.Person> limitedCollection = new LimitedCollection<>(3);
+        GenericExercise.Person pJuan = new GenericExercise.Person("Juan",33);
+        Employee eDamian = new Employee("Damian",28,"Taxi driver");
+        Employee eCarlitos = new Employee("Carlitos",55,"Stripper");
+        GenericExercise.Person pPepe = new GenericExercise.Person("Pepe",22);
+
+        limitedCollection.addData(pJuan);
+        limitedCollection.addData(eDamian);
+        limitedCollection.addData(eCarlitos);
+        limitedCollection.addData(pPepe);
+
+        limitedCollection.getAll();
+
+        // esto genera un problema por que se aplica upper bounds
+        //LimitedCollection<String> limitedCollectionString = new LimitedCollection<>(4);
     }
 
     private static void genericExerciseTwo() {
